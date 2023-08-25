@@ -11,3 +11,10 @@ library(kableExtra)
 ```
 
 ## hey pardner
+
+```{r}
+# pie crab data 
+
+pie_crab_sub <- pie_crab %>% 
+  select(date, water_temp, size, name)
+```
