@@ -18,3 +18,10 @@ library(kableExtra)
 pie_crab_sub <- pie_crab %>% 
   select(date, water_temp, size, name)
 ```
+
+```{r}
+pie_crab_sum <- pie_crab_sub %>% 
+  group_by(name) %>% 
+  summarize(mean_temp = mean(water_temp, na.rm = TRUE),
+            count = n())
+```
