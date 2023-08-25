@@ -25,3 +25,15 @@ pie_crab_sum <- pie_crab_sub %>%
   summarize(mean_temp = mean(water_temp, na.rm = TRUE),
             count = n())
 ```
+
+```{r}
+ggplot(data = pie_crab_sum,
+       aes(x = fct_reorder(name, count), 
+           y = count,
+           fill = name)) +
+  geom_col() +
+  geom_point(aes(x = name,
+                y = mean_temp)) +
+  theme(legend.position = "none")
+
+```
